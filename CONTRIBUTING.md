@@ -30,14 +30,6 @@ _Before_ submitting a pull request, please make sure the following is done…
 
 1.  Jest uses [Yarn](https://yarnpkg.com/) for running development scripts. If you haven't already done so, please run [`corepack enable`](https://nodejs.org/api/corepack.html#workflows).
 
-1.  Make sure you have `python` installed. Python is required by [node-gyp](https://github.com/nodejs/node-gyp) that is used when running `yarn install`.
-
-    To check your version of Python and ensure it's installed you can type:
-
-    ```sh
-    python --version
-    ```
-
 1.  Make sure you have a compatible version of `node` installed (As of November 15th, 2023, `v20.x` is recommended).
 
     ```sh
@@ -111,7 +103,7 @@ Ran all test suites.
 
 ## Checking Constraints
 
-We use [Yarn Constraints](https://yarnpkg.com/features/constraints) to enforce various rules across the repository. They are declared inside the [`yarn.config.cjs` file](https://github.com/jestjs/jest/blob/main/yarn.config.cjs) and their purposes are documented with comments.
+We use [Yarn Constraints](https://yarnpkg.com/features/constraints) to enforce various rules across the repository. They are declared inside the [`yarn.config.cjs` file](https://github.com/Unity-Legal-Affairs/jest/blob/main/yarn.config.cjs) and their purposes are documented with comments.
 
 Constraints can be checked with `yarn constraints`, and fixed with `yarn constraints --fix`. Generally speaking:
 
@@ -211,7 +203,7 @@ See [SECURITY.md](./SECURITY.md) for the safe disclosure of security bugs. With 
 
 This project exists thanks to all the people who [contribute](CONTRIBUTING.md).
 
-<a href="https://github.com/jestjs/jest/graphs/contributors"><img src="https://opencollective.com/jest/contributors.svg?width=890&button=false" /></a>
+<a href="https://github.com/Unity-Legal-Affairs/jest/graphs/contributors"><img src="https://opencollective.com/jest/contributors.svg?width=890&button=false" /></a>
 
 ### [Backers](https://opencollective.com/jest#backer)
 
@@ -219,32 +211,3 @@ Thank you to all our backers! 🙏
 
 <a href="https://opencollective.com/jest#backers" target="_blank"><img src="https://opencollective.com/jest/backers.svg?width=890"></a>
 
-### [Sponsors](https://opencollective.com/jest#sponsor)
-
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website.
-
-<a href="https://opencollective.com/jest/sponsor/0/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/0/avatar.svg"></a> <a href="https://opencollective.com/jest/sponsor/1/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/1/avatar.svg"></a> <a href="https://opencollective.com/jest/sponsor/2/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/2/avatar.svg"></a> <a href="https://opencollective.com/jest/sponsor/3/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/3/avatar.svg"></a> <a href="https://opencollective.com/jest/sponsor/4/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/4/avatar.svg"></a> <a href="https://opencollective.com/jest/sponsor/5/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/5/avatar.svg"></a> <a href="https://opencollective.com/jest/sponsor/6/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/6/avatar.svg"></a> <a href="https://opencollective.com/jest/sponsor/7/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/7/avatar.svg"></a> <a href="https://opencollective.com/jest/sponsor/8/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/8/avatar.svg"></a> <a href="https://opencollective.com/jest/sponsor/9/website" target="_blank"><img src="https://opencollective.com/jest/sponsor/9/avatar.svg"></a>
-
-## License
-
-By contributing to Jest, you agree that your contributions will be licensed under its MIT license.
-
-## Publishing a new release
-
-This project uses [`lerna-lite`](https://github.com/lerna-lite/lerna-lite) to publish to npm. To publish a new release, run:
-
-```sh
-$ yarn lerna publish
-```
-
-This will prompt you for which versions to release.
-
-After the release is published, you can create a new release on GitHub with the release notes (copied from [CHANGELOG.md](./CHANGELOG.md)).
-
-In order to publish a pre-release, the same steps apply, but you need to specify some extra flags:
-
-```sh
-$ yarn lerna publish *version-number* --preid alpha --pre-dist-tag next --dist-tag next
-```
-
-Where `version-number` is e.g. `30.0.0-alpha.5`.
